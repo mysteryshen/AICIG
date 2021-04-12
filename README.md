@@ -7,7 +7,7 @@ Class-specific Diverse Instance Generation is proposed (AICIG). It is a framewor
 stages enforce each other seamlessly. Concretely, a specially designed adversarial classifier drives the generation of class-specific instances by class-specific adversarial process. Meanwhile, the
 distribution of latent variables is assumed to be a Gaussian mixture, which enables to generate diverse instances with limited data. With augmented class-specific and diverse instances, the adversarial classifier can obtain better generalization performance.
 We conduct experiments on four widely-used imbalanced image datasets and compare them with the state-of-the-art methods. The experimental results exhibit that our method can effectively
-prevent overfitting and obtain better performance on imbalance classification tasks.
+prevent overfitting and obtain better performance on imbalance classification tasks.  
 ![image](https://github.com/mysteryshen/AICIG/blob/master/model.pdf)
 ## Requirement
 The code was tested on:
