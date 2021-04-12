@@ -1,14 +1,6 @@
-"""
-(C) Copyright IBM Corporation 2018
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the Eclipse Public License v1.0
-which accompanies this distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.html
-"""
-
 import numpy as np
 from optparse import OptionParser
-import balancing_gan as bagan
+import AICIG as bagan
 from batch_generator import BatchGenerator as BatchGenerator
 import os
 import tensorflow as tf
@@ -69,7 +61,6 @@ def main(seed, dataset,sigma,beta):
 
     # Read command line parameters
     np.random.seed(options.seed)
-    unbalance = options.unbalance
     gratio_mode = options.gratio_mode
     dratio_mode = options.dratio_mode
     gan_epochs = options.epochs
@@ -96,7 +87,6 @@ def main(seed, dataset,sigma,beta):
 
     bg_train_full = BatchGenerator(BatchGenerator.TRAIN, options.seed, batch_size, dataset=dataset_name)
     bg_test = BatchGenerator(BatchGenerator.TEST, options.seed, batch_size, dataset=dataset_name)
-    # class_num = bg_train_full.get_num_classes()
     print("input data loaded...")
 
     shape = bg_train_full.get_image_shape()

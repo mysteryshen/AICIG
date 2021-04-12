@@ -1,13 +1,11 @@
 import os
 import os.path
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas
 import torch
 import torchvision
 from torchvision.transforms import transforms
-
 
 class CelebA(torchvision.datasets.CelebA):
     training_file = 'training.pt'
@@ -99,7 +97,6 @@ class CelebA(torchvision.datasets.CelebA):
             transforms.ToTensor(),
         ])
         return trans(img)
-
 
 if __name__ == '__main__':
     train_dataset = CelebA('./dataset/celeba', split='train', download=True)

@@ -1,16 +1,12 @@
 import os
-
 import h5py
 import numpy as np
 import xlwt
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
-
 class ResultLogger:
-
     def __init__(self, tag, logdir='.', verbose=False):
-
         super().__init__()
         self.tag = tag
         os.makedirs(logdir, exist_ok=True)
