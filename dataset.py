@@ -3,6 +3,7 @@ import torchvision
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from CelebA import CelebA
+import os
 
 _torch_supported_dataset = ('mnist', 'fashion', 'cifar10', 'svhn')
 _custom_dataset = {'gtsrb', 'celeba'}
@@ -30,7 +31,9 @@ def dataset_to_numpy(dataset):
 def load_data(name, seed, imbalance=None, data_dir=None):
     name = name.lower()
     if data_dir is None:
-        data_dir = '/home/zhou/data/shenqihang/dataset/%s/' % name
+        data_dir = './dataset/%s/' % name
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir)
 
     if name in _torch_supported_dataset:
         func_name = _torch_dataset_key_mapping[name]  # if name in _torch_dataset_key_mapping else None
