@@ -18,6 +18,6 @@ The code was tested on:
 ## Usage
 `python train_dataname.py`  
 `eg: python train_mnist.py`  
-The dataset will be automatically downloaded and prepared in ./dataset/ when first run.
+The dataset will be automatically downloaded and prepared in `./dataset/` when first run.
 ## License
 MIT
